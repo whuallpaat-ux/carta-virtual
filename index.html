@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tengo algo especial para ti ❤️</title>
+  <meta name="description" content="Una carta escrita especialmente para ti.">
+  <meta name="theme-color" content="#fde8ee">
+
+  <!-- Vista previa al compartir el enlace (WhatsApp, Instagram, etc.) -->
+  <meta property="og:title" content="Tengo algo especial para ti ❤️">
+  <meta property="og:description" content="Una carta escrita especialmente para ti 💌">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Kaushan+Script&family=Lora:wght@500;600&family=Nunito:wght@400;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="carta/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Dibujos reutilizables (flores, ramas, corazones) ===== -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="petalGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffe6ec"/>
+        <stop offset="1" stop-color="#f3a6b8"/>
+      </linearGradient>
+      <linearGradient id="petalGrad2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fffdf8"/>
+        <stop offset="1" stop-color="#fbdde4"/>
+      </linearGradient>
+      <radialGradient id="heartGloss" cx="35%" cy="30%" r="75%">
+        <stop offset="0" stop-color="#ffb8c5"/>
+        <stop offset=".55" stop-color="#ef6a84"/>
+        <stop offset="1" stop-color="#c93a55"/>
+      </radialGradient>
+
+      <!-- Flor rosada -->
+      <symbol id="flower" viewBox="-50 -50 100 100">
+        <g fill="url(#petalGrad)" stroke="#e78ea3" stroke-width="0.8">
+          <ellipse cx="0" cy="-22" rx="13" ry="22"/>
+          <ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(72)"/>
+          <ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(144)"/>
+          <ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(216)"/>
+          <ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(288)"/>
+        </g>
+        <circle r="9" fill="#f7dcae"/>
+        <circle r="4.5" fill="#e8b27c"/>
+      </symbol>
+
+      <!-- Flor blanca -->
+      <symbol id="flower2" viewBox="-50 -50 100 100">
+        <g fill="url(#petalGrad2)" stroke="#efb3c1" stroke-width="0.8">
+          <ellipse cx="0" cy="-22" rx="12" ry="22"/>
+          <ellipse cx="0" cy="-22" rx="12" ry="22" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-22" rx="12" ry="22" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-22" rx="12" ry="22" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-22" rx="12" ry="22" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-22" rx="12" ry="22" transform="rotate(300)"/>
+        </g>
+        <circle r="8" fill="#f6c6d1"/>
+        <circle r="3.5" fill="#e57a92"/>
+      </symbol>
+
+      <symbol id="leaf" viewBox="0 0 40 20">
+        <path d="M0 10 Q20 -6 40 10 Q20 26 0 10Z" fill="#bcdab3"/>
+        <path d="M3 10 H36" stroke="#9cc493" stroke-width="1" fill="none"/>
+      </symbol>
+
+      <!-- Flor de cerezo -->
+      <symbol id="blossom" viewBox="-12 -12 24 24">
+        <g fill="#fdeef1" stroke="#f1b2c1" stroke-width=".5">
+          <ellipse cx="0" cy="-5.6" rx="3.8" ry="5.4"/>
+          <ellipse cx="0" cy="-5.6" rx="3.8" ry="5.4" transform="rotate(72)"/>
+          <ellipse cx="0" cy="-5.6" rx="3.8" ry="5.4" transform="rotate(144)"/>
+          <ellipse cx="0" cy="-5.6" rx="3.8" ry="5.4" transform="rotate(216)"/>
+          <ellipse cx="0" cy="-5.6" rx="3.8" ry="5.4" transform="rotate(288)"/>
+        </g>
+        <circle r="2.2" fill="#ee8fa3"/>
+        <circle r=".9" fill="#c9495f"/>
+      </symbol>
+
+      <!-- Flor roja pequeña (junto al nombre) -->
+      <symbol id="blossomRed" viewBox="-12 -12 24 24">
+        <g fill="#de5a71">
+          <circle cx="0" cy="-5.5" r="4.2"/>
+          <circle cx="0" cy="-5.5" r="4.2" transform="rotate(72)"/>
+          <circle cx="0" cy="-5.5" r="4.2" transform="rotate(144)"/>
+          <circle cx="0" cy="-5.5" r="4.2" transform="rotate(216)"/>
+          <circle cx="0" cy="-5.5" r="4.2" transform="rotate(288)"/>
+        </g>
+        <circle r="2.4" fill="#fbd3dc"/>
+      </symbol>
+
+      <!-- Rama de cerezo -->
+      <symbol id="branch" viewBox="0 0 260 200">
+        <g fill="none" stroke="#7a4b3f" stroke-linecap="round">
+          <path d="M-10 18 C40 28 72 58 112 70 S182 110 232 172" stroke-width="3.5"/>
+          <path d="M58 44 C70 28 86 18 104 16" stroke-width="2"/>
+          <path d="M122 74 C138 58 154 52 174 54" stroke-width="2"/>
+          <path d="M166 112 C176 126 180 142 176 160" stroke-width="2"/>
+          <path d="M30 26 C34 42 32 58 24 70" stroke-width="1.8"/>
+          <path d="M196 132 C210 126 222 126 236 132" stroke-width="1.6"/>
+        </g>
+        <use href="#blossom" x="92" y="2" width="24" height="24"/>
+        <use href="#blossom" x="104" y="20" width="18" height="18"/>
+        <use href="#blossom" x="162" y="40" width="26" height="26"/>
+        <use href="#blossom" x="178" y="58" width="16" height="16"/>
+        <use href="#blossom" x="164" y="146" width="24" height="24"/>
+        <use href="#blossom" x="180" y="164" width="18" height="18"/>
+        <use href="#blossom" x="12" y="62" width="22" height="22"/>
+        <use href="#blossom" x="30" y="76" width="15" height="15"/>
+        <use href="#blossom" x="222" y="160" width="26" height="26"/>
+        <use href="#blossom" x="230" y="122" width="20" height="20"/>
+        <use href="#blossom" x="46" y="26" width="16" height="16"/>
+        <use href="#blossom" x="136" y="76" width="20" height="20"/>
+        <circle cx="72" cy="24" r="3" fill="#f6b6c5"/>
+        <circle cx="150" cy="58" r="2.6" fill="#f6b6c5"/>
+        <circle cx="178" cy="128" r="2.6" fill="#f6b6c5"/>
+        <circle cx="210" cy="124" r="2.4" fill="#f6b6c5"/>
+      </symbol>
+
+      <!-- Corazón brillante -->
+      <symbol id="gheart" viewBox="0 0 24 24">
+        <path d="M12 21s-7.5-4.6-9.6-9.3C.8 8.1 3 4 7 4c2.1 0 3.6 1.1 5 3 1.4-1.9 2.9-3 5-3 4 0 6.2 4.1 4.6 7.7C19.5 16.4 12 21 12 21z" fill="url(#heartGloss)"/>
+        <ellipse cx="7.6" cy="8.6" rx="2.3" ry="1.3" fill="#fff" opacity=".55" transform="rotate(-35 7.6 8.6)"/>
+      </symbol>
+
+      <!-- Corazón de contorno -->
+      <symbol id="oheart" viewBox="0 0 24 24">
+        <path d="M12 20.5s-7.3-4.5-9.3-9C1.2 8 3.3 4.2 7 4.2c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.7 0 5.8 3.8 4.3 7.3-2 4.5-9.3 9-9.3 9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== Fondo ===== -->
+  <div class="bokeh" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+  <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+
+  <!-- Ramas de cerezo en las esquinas -->
+  <svg class="branch tl" aria-hidden="true"><use href="#branch"/></svg>
+  <svg class="branch br" aria-hidden="true"><use href="#branch"/></svg>
+
+  <!-- =========================================================
+       ESCENA 1: el sobre
+       ========================================================= -->
+  <main class="stage" id="stage">
+
+    <h1 class="cover-title">
+      <span id="coverName">Para ti</span> <span class="cover-emoji">💗</span>
+    </h1>
+
+    <div class="scene" id="scene">
+      <div class="envelope" id="envelope">
+        <span class="env-back"></span>
+        <span class="env-paper"><span class="paper-lines"></span></span>
+        <span class="env-front"><span class="env-stitch"></span></span>
+        <span class="env-flap"></span>
+
+        <!-- Decoración del sobre -->
+        <span class="env-deco" aria-hidden="true">
+          <span class="card-bouquet env-bouquet">
+            <svg class="leaf l1"><use href="#leaf"/></svg>
+            <svg class="leaf l2"><use href="#leaf"/></svg>
+            <svg class="flower f1"><use href="#flower"/></svg>
+            <svg class="flower f2"><use href="#flower2"/></svg>
+          </span>
+          <span class="env-to" id="envTo">Para ti</span>
+          <span class="postmark">CON<br>AMOR</span>
+          <span class="stamp">
+            <span class="stamp-inner">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.8 8.1 3 4 7 4c2.1 0 3.6 1.1 5 3 1.4-1.9 2.9-3 5-3 4 0 6.2 4.1 4.6 7.7C19.5 16.4 12 21 12 21z"/></svg>
+              <small>LOVE</small>
+            </span>
+          </span>
+          <span class="env-spark sp1">✦</span>
+          <span class="env-spark sp2">✦</span>
+          <span class="env-spark sp3">✧</span>
+          <span class="env-spark sp4">✧</span>
+        </span>
+
+        <button class="seal" id="seal" type="button" aria-label="Abrir la carta" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.8 8.1 3 4 7 4c2.1 0 3.6 1.1 5 3 1.4-1.9 2.9-3 5-3 4 0 6.2 4.1 4.6 7.7C19.5 16.4 12 21 12 21z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="hint">Tengo algo especial para ti ❤️<br><span>Toca el corazón para abrir</span></p>
+  </main>
+
+  <!-- =========================================================
+       ESCENA 2: la carta abierta con la foto
+       ========================================================= -->
+  <section class="letter-view" id="letterView" aria-label="Carta" hidden>
+
+    <!-- Corazones brillantes de adorno -->
+    <div class="lv-hearts" aria-hidden="true">
+      <svg class="gh g1"><use href="#gheart"/></svg>
+      <svg class="gh g2"><use href="#gheart"/></svg>
+      <svg class="gh g3"><use href="#gheart"/></svg>
+      <svg class="gh g4"><use href="#gheart"/></svg>
+    </div>
+
+    <div class="lv-layout">
+
+      <!-- Columna izquierda: foto + música + compartir -->
+      <aside class="lv-side">
+        <figure class="lv-photo" id="polaroid" title="Toca la foto 💗">
+          <div class="lv-frame">
+            <img src="carta/img/rosa.png" alt="Foto de Rosa" width="640" height="640">
+          </div>
+          <svg class="lv-outline-heart" aria-hidden="true"><use href="#oheart"/></svg>
+          <figcaption class="lv-name">
+            <span id="photoCaption">Bonita</span>
+            <svg class="lv-blossom" aria-hidden="true"><use href="#blossomRed"/></svg>
+          </figcaption>
+        </figure>
+
+        <div class="lv-actions">
+          <button class="lv-music" id="lvMusic" type="button" aria-pressed="false" aria-label="Reproducir nuestra canción">
+            <span class="play-circle" id="lvMusicIcon"></span>
+            <span class="lv-music-text">
+              <strong>Nuestra canción</strong>
+              <small>(opcional)</small>
+            </span>
+            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          </button>
+
+          <button class="lv-share" id="lvShare" type="button">
+            <span class="share-circle">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+            </span>
+            Compartir carta
+          </button>
+        </div>
+      </aside>
+
+      <!-- Columna derecha: la carta -->
+      <div class="lv-main">
+        <p class="lv-to">Para ti, bonita <svg class="mini-gheart" aria-hidden="true"><use href="#gheart"/></svg></p>
+
+        <div class="flip" id="flip">
+          <div class="flip-inner">
+
+            <!-- Frente: la carta -->
+            <article class="letter-card front" id="letterCard" title="Toca la carta para guardarla en el sobre">
+              <p class="lv-small reveal">Para ti, bonita<span class="tiny-heart" aria-hidden="true">♥</span></p>
+
+              <h2 class="lv-title reveal">
+                <span class="t-serif">Hola,</span>
+                <span class="t-script">bonita</span>
+                <svg class="title-oheart" aria-hidden="true"><use href="#oheart"/></svg>
+              </h2>
+
+              <p class="body reveal">Quería escribirte esta carta porque, aunque recién nos estamos conociendo, hay algo en ti que ha despertado mi interés y me ha sacado más de una sonrisa.</p>
+
+              <p class="body reveal">No sé qué nos tenga preparado el destino ni qué pueda pasar más adelante, pero sí sé que me gustaría seguir conociéndote, descubrir tu forma de ser, escuchar tus historias y compartir contigo momentos bonitos.</p>
+
+              <p class="body reveal">No quiero apresurar nada ni decirte mil cosas que todavía estamos descubriendo. Prefiero que el tiempo nos permita conocernos de verdad y que cada conversación, cada sonrisa y cada momento compartido nos acerque un poquito más.</p>
+
+              <p class="body reveal">Tal vez todavía no nos conocemos tanto, pero me parece bonito que alguien pueda comenzar a gustarte sin que te des cuenta exactamente de cuándo pasó. Y creo que eso me está pasando contigo. ❤️</p>
+
+              <p class="body reveal">Solo quería que supieras que me pareces una chica especial y que me gustaría tener la oportunidad de seguir conociéndote. No espero que todo sea perfecto, solo que podamos ser sinceros, disfrutar el momento y dejar que las cosas fluyan naturalmente.</p>
+
+              <blockquote class="lv-quote reveal">
+                <p class="quote-script"><span class="brush">A veces, las historias más bonitas comienzan con dos personas que apenas se están conociendo.<span class="q-heart" aria-hidden="true">♥</span></span></p>
+                <p class="quote-after">Y quién sabe, quizá la nuestra tenga algo bonito por descubrir. ❤️✨</p>
+              </blockquote>
+
+              <div class="lv-sign reveal">
+                <p class="closing">Con cariño,</p>
+                <p class="sig">Alguien que tiene muchas ganas de conocerte más.</p>
+                <span class="sig-line" aria-hidden="true"><i></i><svg><use href="#oheart"/></svg><i></i></span>
+              </div>
+
+              <div class="lv-cta reveal">
+                <button class="btn-next" id="btnNext" type="button">
+                  Seguir leyendo
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- Reverso: P.D. -->
+            <article class="letter-card back" id="letterBack" aria-hidden="true" inert>
+              <p class="lv-small">P.D.<span class="tiny-heart" aria-hidden="true">♥</span></p>
+              <h2 class="lv-title back-title">
+                <span class="t-script">Gracias</span>
+                <span class="t-serif">por leer hasta aquí</span>
+              </h2>
+              <p class="body">Si esta carta te sacó aunque sea una sonrisa, ya valió la pena escribirla. 💗</p>
+              <p class="body">Me encantaría seguir conociéndote, a tu ritmo y sin prisas. ✨</p>
+              <div class="back-actions">
+                <button class="btn-ghost" id="btnBack" type="button">
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                  Volver a la carta
+                </button>
+                <button class="btn-next" id="btnSave" type="button">
+                  Guardar en el sobre
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Barra de controles (pantalla del sobre) ===== -->
+  <nav class="toolbar" aria-label="Controles de la carta">
+    <button class="tool-btn" id="btnMusic" type="button" aria-pressed="false" aria-label="Reproducir música"></button>
+    <button class="tool-btn" id="btnToggle" type="button" aria-label="Abrir carta"></button>
+    <button class="tool-btn" id="btnReread" type="button" aria-label="Leer de nuevo">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+      <span class="label">Leer de nuevo</span>
+    </button>
+    <button class="tool-btn" id="btnShare" type="button" aria-label="Compartir carta">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+      <span class="label">Compartir</span>
+    </button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="carta/js/script.js"></script>
+</body>
+</html>
